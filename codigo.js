@@ -31,11 +31,14 @@ function obtenerDomicilio() {
             for (const sucursales of sucursalCerca) {
                 const { id, direccion: { localidad, provincia, codigoPostal } } = sucursales;
                 console.log(id, codigoPostal, localidad, provincia);
+
             };
+            encontrarCodig();
         });
 };
 
 obtenerDomicilio();
+
 //PASOS
 
 
@@ -51,8 +54,7 @@ function updateValue(e) {
 
 //ESA INFO LA COMPARO CON EL ARRAY DE SUCURSALES
 
-if (input == sucursales.codigoPostal) {
-    console.log(sucursales.calle + sucursales.numero + sucursales.localidad);
-} else {
-    console.log("ingresar un codigo postal");
+function encontrarCodig() {
+    const resultado = sucursales.find(input => sucursales.codigoPostal === input);
+    console.log(resultado);
 }
