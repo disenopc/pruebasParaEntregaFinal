@@ -16,7 +16,8 @@
 // const cerrarM = document.querySelector("#cerrar");
 // cerrarM.addEventListener("click", () => retiro.close());
 
-// let sucursalCerca = "";
+let sucursalCerca = "";
+let sucursales = [];
 
 
 
@@ -36,6 +37,9 @@ function obtenerDomicilio() {
 
 obtenerDomicilio();
 //PASOS
+
+
+
 //ESCRIBIR EL INPUT Y ENVIARLO
 //RECIBO LA INFO DEL INPUT
 const input = document.querySelector('#inputCp');
@@ -43,4 +47,12 @@ input.addEventListener('input', updateValue);
 
 function updateValue(e) {
     console.log(e.target.value);
+}
+
+//ESA INFO LA COMPARO CON EL ARRAY DE SUCURSALES
+
+if (input == sucursales.codigoPostal) {
+    console.log(sucursales.calle + sucursales.numero + sucursales.localidad);
+} else {
+    console.log("ingresar un codigo postal");
 }
