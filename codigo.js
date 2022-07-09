@@ -55,6 +55,7 @@ function updateValue(e) {
 //ESA INFO LA COMPARO CON EL ARRAY DE SUCURSALES
 
 function encontrarCodig() {
-    const resultado = sucursales.find(input => sucursales.codigoPostal === input);
+
+    const resultado = sucursalCerca.filter(e => e.codigosPostalesAtendidos.filter(e => e == input.value) == input.value);
     console.log(resultado);
 }
